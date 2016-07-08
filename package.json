@@ -1,0 +1,30 @@
+{
+  "name": "code-blocks-to-gists",
+  "version": "1.0.0",
+  "description": "Transform Markdown code blocks into gists automatically.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src --out-dir build"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "plugins": [
+      "transform-async-to-generator"
+    ]
+  },
+  "author": "Marcin Grzywaczewski (killavus@gmail.com)",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.4.1",
+    "marked": "^0.3.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.10.4",
+    "babel-plugin-transform-async-to-generator": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0"
+  }
+}
