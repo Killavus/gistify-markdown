@@ -56,7 +56,7 @@ function gistify(fileName, user, cb) {
           'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36'
         }, user.headers()),
         json: {
-          description: 'Created using code-blocks-to-gists.',
+          description: 'Created using gistify-markdown (https://github.com/Killavus/gistify-markdown).',
           public: true,
           files: {
             [fileName]: { content: node.text }
