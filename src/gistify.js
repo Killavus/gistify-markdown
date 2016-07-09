@@ -40,20 +40,21 @@ const idFn = x => x;
 const matchType = (type, matchedFn) => node =>
                     (node.type === type) ? matchedFn(node) : idFn(node);
 
-function gistify(fileName, cb) {
+function gistify(fileName, user, cb) {
   fs.readFile(fileName, (err, fileBuf) => {
     if (err) cb(err);
 
     const lexedMarkdown = marked.lexer(fileBuf.toString('utf8'));
-    const parseCodeBlock = node => {
+    const parseCodeBlock = user => node => {
       const extension = langToExt(node.lang);
       const fileName = `${randomstring.generate(8)}.${extension}`;
+
       return {
         url: 'https://api.github.com/gists',
         method: 'POST',
-        headers: {
+        headers: Object.assign({
           'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36'
-        },
+        }, user.headers()),
         json: {
           description: 'Created using code-blocks-to-gists.',
           public: true,
@@ -66,7 +67,7 @@ function gistify(fileName, cb) {
 
     const lexedMarkdownWithCodeMapped = lexedMarkdown.map(matchType(
                                           'code',
-                                          parseCodeBlock));
+                                          parseCodeBlock(user)));
 
     async.map(lexedMarkdownWithCodeMapped, typeAsync, (err, results) => {
       if (err) { cb(err); }

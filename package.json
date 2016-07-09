@@ -1,18 +1,14 @@
 {
-  "name": "code-blocks-to-gists",
+  "name": "gistify-markdown",
   "version": "1.0.0",
-  "description": "Transform Markdown code blocks into gists automatically.",
+  "description": "Transform Markdown documents to replace code snippets with GitHub Gists.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src --out-dir build"
   },
   "babel": {
     "presets": [
       "es2015"
-    ],
-    "plugins": [
-      "transform-async-to-generator"
     ]
   },
   "author": "Marcin Grzywaczewski (killavus@gmail.com)",
@@ -26,7 +22,9 @@
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "babel-core": "^6.10.4",
-    "babel-plugin-transform-async-to-generator": "^6.8.0",
     "babel-preset-es2015": "^6.9.0"
+  },
+  "bin": {
+    "gistify-markdown": "./bin/gistify.js"
   }
 }
