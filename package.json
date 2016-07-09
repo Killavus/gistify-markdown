@@ -6,6 +6,14 @@
   "scripts": {
     "build": "babel src --out-dir build"
   },
+  "keywords": ["cli", "utility", "markdown", "medium", "gist", "transform"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Killavus/gistify-markdown.git"
+  },
+  "homepage": "https://github.com/Killavus/gistify-markdown",
+  "bugs": "https://github.com/Killavus/gistify-markdown/issues",
+  "preferGlobal": true,
   "babel": {
     "presets": [
       "es2015"
