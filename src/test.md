@@ -2,7 +2,7 @@
 
 This is a rather [simple document](https://example.com) for testing whether this program works or not.
 
-Let's see with some languages in different languages:
+Let's see with `some code` in different languages:
 
 ```javascript
 var x = 2;
