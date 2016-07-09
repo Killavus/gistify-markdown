@@ -16,6 +16,10 @@ Or if you'd like to develop this project:
 
 ```
 git clone https://github.com/Killavus/gistify-markdown.git
+cd gistify-markdown
+npm install
+# You can work with this project. Modify `src/` files. 
+# You can then use `npm run build` to build ES2015 files to proper JS files in `build/`.
 ```
 
 ## Usage
