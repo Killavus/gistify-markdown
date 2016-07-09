@@ -22,6 +22,8 @@ npm install
 # You can then use `npm run build` to build ES2015 files to proper JS files in `build/`.
 ```
 
+I'm using Node 5.11.0 & npm 3.10.3 to work with this project. I don't know how does it work on other versions of node. Sorry!
+
 ## Usage
 
 ```
